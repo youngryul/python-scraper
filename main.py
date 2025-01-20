@@ -45,3 +45,23 @@ my_name = "영률"
 my_age = 26
 
 print(f"안녕 내 이름은 {my_name}이고 나이는 {my_age}이야")
+
+
+# if문
+winner = 10
+
+if winner > 10:
+  print("10보다 큽니다.")
+elif winner < 10:
+  print("10보다 작습니다.")
+else:
+  print("10입니다.")
+
+#입력 받기
+age = input("How old are you?")
+
+# 문자열 -> 숫자로 변환
+int(age)
+
+#변수의 타입 알기
+type(age)
