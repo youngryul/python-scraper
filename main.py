@@ -1,67 +1,31 @@
-# 함수 (공백에 유의하기)
-def say_hello():
-  print("hello how r u?")
+def get_yearly_revenue(mothly_revenue):
+  return mothly_revenue * 12
 
-say_hello()
+def get_yearly_expenses(mothly_expenses):
+  return mothly_expenses * 12
 
-# parameters
-def say_name(name="anonymous"):
-  print("hello", name , "how are you?")
+def get_tax_amount(profit):
+  if profit > 100000:
+    return profit * profit * 0.25
+  else:
+    return profit * profit * 0.15
 
-say_name("영률")
-say_name()
-
-# 계산기
-def plus(a=0, b=0):
-  print("덧셈 : ", a+b)
-
-def minus(a=0, b=0):
-  print("뺄셈 : " , a-b)
-
-def multiply(a=0, b=0):
-  print("곱셈 : ", a*b)
-
-def divide(a=0, b=1):
-  print("나눗셈 : ", a/b)
-
-def power_of(a=0):
-  print("제곱 : ", a*a)
-
-plus()
-minus()
-multiply()
-divide()
-power_of()
-
-plus(1,1)
-minus(2,1)
-multiply(2,2)
-divide(4,2)
-power_of(2)
+def apply_tax_credits(tax_amount, tax_credits):
+  return tax_amount * tax_credits
 
 
-# 문자열 포맷팅
-my_name = "영률"
-my_age = 26
 
-print(f"안녕 내 이름은 {my_name}이고 나이는 {my_age}이야")
+monthly_revenue = 5500000
+monthly_expenses = 2700000
+tax_credits = 0.01
 
+yearly_revenue = get_yearly_revenue(monthly_revenue)
+yearly_expenses = get_yearly_expenses(monthly_expenses)
 
-# if문
-winner = 10
+profit = yearly_revenue - yearly_expenses
 
-if winner > 10:
-  print("10보다 큽니다.")
-elif winner < 10:
-  print("10보다 작습니다.")
-else:
-  print("10입니다.")
+tax_amount = get_tax_amount(profit)
 
-#입력 받기
-age = input("How old are you?")
+final_tax_amount = tax_amount - apply_tax_credits(tax_amount, tax_credits)
 
-# 문자열 -> 숫자로 변환
-int(age)
-
-#변수의 타입 알기
-type(age)
+print(f"Your tax bill is: ${final_tax_amount}")
